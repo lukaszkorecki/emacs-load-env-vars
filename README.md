@@ -18,6 +18,17 @@ If you use use-package.
 
 Just execute `M-x load-env-vars` and point to your env file.
 
+### Programatic usage
+
+
+`load-env-vars-from-string` can be used to load environment variables from secrets managers or similar tools:
+
+
+```elisp
+;; using some 1Password CLI:
+(load-env-vars-from-string (shell-command-to-string "op inject -i ./secrets.env.tmpl"))
+```
+
 ## Supported Syntax
 
 Check [env.example](env.example) for supported syntax

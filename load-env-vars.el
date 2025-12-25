@@ -86,5 +86,12 @@
     (let ((env-vars (load-env-vars-extract-env-vars)))
       (load-env-vars-set-env env-vars))))
 
+(defun load-env-vars-from-string (string)
+  "Load environment variables found in STRING."
+  (with-temp-buffer
+    (insert string)
+    (let ((env-vars (load-env-vars-extract-env-vars)))
+      (load-env-vars-set-env env-vars))))
+
 (provide 'load-env-vars)
 ;;; load-env-vars.el ends here
